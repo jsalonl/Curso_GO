@@ -3,22 +3,24 @@
 ## 1. Introduccion al lenguaje
 
 1. [Que es Go?](Intro/Que_es_go.md) 
-2. [Variables y tipos de datos](Intro/Variables_y_tipos_datos.md)
+2. [Variables y tipos de datos](Intro/Variables_y_tpos_de_datos.md)
+   - [Ejemplos Variables](Intro/Variables_ejemplos.md)
 3. [Condicionales](Intro/Condicionales.md)
-4. Funciones
-5. Estructuras
-6. Interfaces
-7. Errores
-8. Slices
-9. Mapas
-10. Punteros
-11. Paquetes y modulos
-12. Canales
-13. Mutexes
-14. Generics
-15. Enums
-16. Context
-17. Documentacion
+4. [Bucles](Intro/Bucles.md)
+5. [Funciones](Intro/Funciones.md)
+6. Estructuras
+7. Interfaces
+8. Errores
+9. Slices
+10. Mapas
+11. Punteros
+12. Paquetes y modulos
+13. Canales
+14. Mutexes
+15. Generics
+16. Enums
+17. Context
+18. Documentacion
 
 ## 2. Infraestructura y Go
 

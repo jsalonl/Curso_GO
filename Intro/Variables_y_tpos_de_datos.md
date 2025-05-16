@@ -189,7 +189,7 @@ var funcionSuma func(int, int) int = suma
 
 #### Interfaces
 
-Las interfaces permiten definir un conjunto de métodos que deben ser implementados por cualquier tipo que quiera "cumplir" con esa interfaz.
+Las interfaces permiten definir un conjunto de métodos que deben ser implementados por cualquier tipo que quiera "cumplir" con esa interfaz. Lo veremos con mas detalle en proximos capítulos.
 
 ```go
 type Describible interface {
@@ -226,7 +226,59 @@ func main(){
 }
 ```
 
-## Buenas practicas
+## Constantes
+
+En Go, una constante es un valor que no puede cambiar durante la ejecución del programa. Se declara con la palabra clave const.
+
+```go
+const pi = 3.14
+const saludo string = "Hola"
+```
+
+Se pueden declarar en bloque:
+
+```go
+const (
+    Lunes    = 1
+    Martes   = 2
+    Miercoles = 3
+)
+```
+
+```go
+const(
+    creditCard = "creditCard"
+    debitCard = "DEBIT-CARD"
+)
+```
+
+Go proporciona una herramienta poderosa para enumeraciones: iota. Es un identificador predeclarado que se incrementa automáticamente dentro de bloques de constantes.
+
+```go
+const (
+    Norte = iota  // 0
+    Sur           // 1
+    Este          // 2
+    Oeste         // 3
+)
+```
+
+Cada vez que se usa iota en una línea diferente, su valor incrementa automáticamente, empezando en 0 dentro de cada bloque.
+
+## Sombras de variables (shadowing)
+
+El shadowing ocurre cuando una variable nueva declarada en un ámbito (scope) interno tiene el mismo nombre que una variable existente en un ámbito externo. La variable más interna "oculta" (o sombra) a la externa en ese contexto.
+
+```go
+x := 10
+if true {
+    x := 20 // Esto es una nueva variable x, diferente de la anterior
+    fmt.Println(x) // 20
+}
+fmt.Println(x) // 10
+```
+
+## Comentarios adicionales y  Buenas practicas
 
 1. Usar inferencia de tipo cuando sea posible: Aprovechar la inferencia de tipo en lugar de declarar explícitamente el tipo de la variable cuando el valor ya lo determina claramente. Esto mejora la legibilidad y reduce la redundancia.
 
@@ -248,7 +300,7 @@ var (
 
 ```go
 var (
-    nombre string = "Juan"
+    Nombre string = "Juan"
 )
 ```
 
@@ -256,4 +308,23 @@ var (
 
 ```go
 const pi = 3.14
+```
+
+5.  Uso de new y make.
+
+ - new(T) asigna memoria para un valor de tipo T y devuelve un puntero.
+ - make se usa para slices, maps y channels.
+
+```go
+p := new(int) // *int
+s := make([]int, 5)
+```
+
+6. Comentarios y documentación.
+
+```go
+// Suma retorna la suma de dos enteros.
+func Suma(a, b int) int {
+    return a + b
+}
 ```
